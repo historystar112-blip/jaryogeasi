@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자료게시포털</title>
+<style>
+  body { font-family: sans-serif; padding: 16px; max-width: 700px; margin: 0 auto; }
+  h2 { margin-top: 24px; }
+  ul { padding-left: 20px; }
+  li { margin-bottom: 10px; }
+  a { color: #1a73e8; text-decoration: none; }
+  #uploadBox { border: 1px solid #ccc; padding: 16px; border-radius: 8px; margin-top: 20px; }
+  button { padding: 10px 14px; margin-top: 8px; margin-right: 8px; border: none; border-radius: 6px; background: #1a73e8; color: white; font-size: 14px; }
+  button.secondary { background: #888; }
+  #status { margin-top: 12px; font-weight: bold; }
+  #dupChoice { margin-top: 12px; display: none; }
+  #tokenBox { margin-top: 12px; font-size: 13px; color: #666; }
+  input[type=password] { width: 100%; padding: 8px; box-sizing: border-box; margin-top: 6px; }
+</style>
+</head>
+<body>
+
+<h2>자료 목록</h2>
+<ul id="fileList"><li>불러오는 중...</li></ul>
+
+<div id="uploadBox">
+  <h3>새 자료 업로드</h3>
+  <input type="file" id="fileInput" accept=".html">
+  <div id="status"></div>
+  <div id="dupChoice">
+    <p>같은 이름의 파일이 이미 있습니다.</p>
+    <button onclick="doUpload(true)">덮어쓰기</button>
+    <button class="secondary" onclick="renamePrompt()">새 이름으로 저장</button>
+    <button class="secondary" onclick="cancelUpload()">취소</button>
+  </div>
+  <div id="tokenBox">
+    <details>
+      <summary>업로드 권한 설정 (최초 1회)</summary>
+      <p>GitHub 개인 액세스 토큰을 입력하세요. 이 기기에만 저장되며 외부로 전송되지 않습니다.</p>
+      <input type="password" id="tokenInput" placeholder="github_pat_...">
+      <button onclick="saveToken()">저장</button>
+    </details>
+  </div>
+</div>
+
+<script>
+  const OWNER = 'historystar112-blip';
+  const REPO = 'jaryogeasi';
+  const API = `https://api.github.com/repos/${OWNER}/${REPO}/contents`;
+  const PAGES_URL = `https://${OWNER}.github.io/${REPO}`;
+
+  let pendingFile = null;
+  let pendingName = null;
+  let pendingSha = null;
+
+  function getToken() {
+    return localStorage.getItem('jaryo_token') || '';
+  }
+
+  function saveToken() {
+    const t = document.getElementById('tokenInput').value.trim();
+    if (!t) return;
+    localStorage.setItem('jaryo_token', t);
+    document.getElementById('tokenInput').value = '';
+    document.getElementById('status').innerText = '토큰이 저장되었습니다.';
+  }
+
+  async function loadFileList() {
+    const listEl = document.getElementById('fileList');
+    try {
+      const res = await fetch(`${API}/`);
+      if (!res.ok) throw new Error('목록을 불러올 수 없습니다 (' + res.status + ')');
+      const items = await res.json();
+      const htmlFiles = items.filter(i => i.type === 'file' && i.name.toLowerCase().endsWith('.html') && i.name !== 'index.html');
+      if (htmlFiles.length === 0) {
+        listEl.innerHTML = '<li>(자료가 없습니다)</li>';
+        return;
+      }
+      listEl.innerHTML = htmlFiles.map(f =>
+        `<li><a href="${PAGES_URL}/${encodeURIComponent(f.name)}" target="_blank">${f.name}</a></li>`
+      ).join('');
+    } catch (err) {
+      listEl.innerHTML = '<li>오류: ' + err.message + '</li>';
+    }
+  }
+
+  function utf8ToBase64(str) {
+    const bytes = new TextEncoder().encode(str);
+    let binary = '';
+    bytes.forEach(b => binary += String.fromCharCode(b));
+    return btoa(binary);
+  }
+
+  document.getElementById('fileInput').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    if (!getToken()) {
+      document.getElementById('status').innerText = '먼저 아래 "업로드 권한 설정"에서 토큰을 입력해주세요.';
+      return;
+    }
+    if (!file.name.toLowerCase().endsWith('.html')) {
+      document.getElementById('status').innerText = 'HTML 파일만 업로드할 수 있습니다.';
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = async function(evt) {
+      pendingFile = evt.target.result;
+      pendingName = file.name;
+      document.getElementById('status').innerText = '중복 확인 중...';
+      try {
+        const res = await fetch(`${API}/${encodeURIComponent(pendingName)}`, {
+          headers: { Authorization: `token ${getToken()}` }
+        });
+        if (res.status === 200) {
+          const data = await res.json();
+          pendingSha = data.sha;
+          document.getElementById('status').innerText = '';
+          document.getElementById('dupChoice').style.display = 'block';
+        } else {
+          pendingSha = null;
+          doUpload(false);
+        }
+      } catch (err) {
+        document.getElementById('status').innerText = '오류: ' + err.message;
+      }
+    };
+    reader.readAsText(file, 'UTF-8');
+  });
+
+  async function doUpload(overwrite) {
+    document.getElementById('dupChoice').style.display = 'none';
+    document.getElementById('status').innerText = '업로드 중...';
+    try {
+      const body = {
+        message: (overwrite ? '자료 업데이트: ' : '자료 추가: ') + pendingName,
+        content: utf8ToBase64(pendingFile)
+      };
+      if (overwrite && pendingSha) body.sha = pendingSha;
+      const res = await fetch(`${API}/${encodeURIComponent(pendingName)}`, {
+        method: 'PUT',
+        headers: {
+          Authorization: `token ${getToken()}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      });
+      if (!res.ok) {
+        const err = await res.json();
+        throw new Error(err.message || res.status);
+      }
+      document.getElementById('status').innerText = '업로드 완료! (1분 정도 후 목록에 반영됩니다)';
+      document.getElementById('fileInput').value = '';
+      setTimeout(loadFileList, 3000);
+    } catch (err) {
+      document.getElementById('status').innerText = '오류: ' + err.message;
+    }
+  }
+
+  function renamePrompt() {
+    const newName = prompt('새 파일 이름을 입력하세요 (.html 포함):', pendingName);
+    if (!newName) return;
+    pendingName = newName;
+    pendingSha = null;
+    document.getElementById('dupChoice').style.display = 'none';
+    doUpload(false);
+  }
+
+  function cancelUpload() {
+    pendingFile = null;
+    pendingName = null;
+    pendingSha = null;
+    document.getElementById('dupChoice').style.display = 'none';
+    document.getElementById('status').innerText = '취소되었습니다.';
+    document.getElementById('fileInput').value = '';
+  }
+
+  loadFileList();
+</script>
+
+</body>
+</html>
