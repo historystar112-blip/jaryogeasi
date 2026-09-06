@@ -1,0 +1,420 @@
+
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[역사 수업지] 박정희 정부의 경제 개발과 유신 체제</title>
+    <style>
+        /* 모던 한국어 타이포그래피 및 테마 정의 */
+        :root {
+            --primary-color: #B03A2E; /* 격동의 현대사를 상징하는 브릭 레드 */
+            --text-color: #362119;    /* 깊은 에스프레소 브라운 */
+            --bg-color: #FBFBF9;      /* 부드러운 오프화이트 크림 */
+            --card-bg: #F4EFEB;       /* 연한 베이지 카드 배경 */
+            --accent-color: #D35400;  /* 포인트 오렌지 */
+            --muted-color: #7F8C8D;   /* 가이드 그레이 */
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 헤더 스타일링 */
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 25px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-weight: 800;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--muted-color);
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* 대단원 스타일링 */
+        section {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #EAEAEA;
+            padding-bottom: 10px;
+        }
+
+        /* 도입 인포 박스 */
+        .intro-box {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-top: 15px;
+            border: 1px solid #E5DEC9;
+        }
+
+        .intro-box h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.15rem;
+        }
+
+        .intro-box ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .intro-box li {
+            margin-bottom: 10px;
+        }
+
+        .debate-card {
+            background-color: #FFF9F5;
+            border: 1px dashed var(--accent-color);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-top: 20px;
+        }
+
+        /* 연대기 타임라인 (마인드맵 대용 구조) */
+        .timeline {
+            position: relative;
+            margin: 20px 0;
+            padding-left: 30px;
+            border-left: 2px solid #E0DCD3;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -37px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: var(--text-color);
+        }
+
+        /* 세부 카드 스타일 */
+        .event-card {
+            background-color: #FAF8F5;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--text-color);
+        }
+
+        .event-card h3 {
+            margin-top: 0;
+            color: var(--text-color);
+            font-size: 1.1rem;
+            border-bottom: 1px solid #E0DDD5;
+            padding-bottom: 5px;
+        }
+
+        .event-card ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .event-card li {
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        /* 형성평가 퀴즈 스타일링 */
+        .quiz-item {
+            background-color: #FAFAFA;
+            border: 1px solid #EAEAEA;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .quiz-question {
+            font-weight: bold;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+        }
+
+        .quiz-options {
+            margin: 10px 0;
+        }
+
+        .quiz-options label {
+            display: block;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+
+        /* 인터랙티브 아코디언 버튼 */
+        .ans-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .ans-btn:hover {
+            background-color: #8C2D24;
+        }
+
+        .ans-content {
+            display: none;
+            margin-top: 15px;
+            background-color: #EDF2F7;
+            border-left: 4px solid #3182CE;
+            padding: 12px 18px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #2D3748;
+        }
+
+        footer {
+            text-align: center;
+            color: var(--muted-color);
+            font-size: 0.85rem;
+            margin-top: 50px;
+            border-top: 1px solid #EAEAEA;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>박정희 정부의 경제 개발과 유신 체제</h1>
+        <p>대한민국 근현대사 수업 보조 학습지</p>
+    </header>
+
+    <!-- 0. 도입 영역 -->
+    <section>
+        <h2>0. 도입: 경제 성장의 기적 뒤에 감춰진 헌신</h2>
+        <p>우리가 누리는 오늘의 풍요는 과연 소수의 지도자나 관료들의 능력만으로 이뤄진 것일까요? 한강의 기적으로 불리는 엄청난 개발 과정 이면에는, 우리 할머니, 할아버지들의 헌신적인 삶이 버티고 있었습니다.</p>
+        
+        <div class="intro-box">
+            <h3>우리가 기억해야 할 역사의 주인공들</h3>
+            <ul>
+                <li><strong>파독 광부와 간호사:</strong> 독일의 차가운 지하 탄광과 낯선 병실 속에서 모진 고생을 견디며 번 소중한 외화를 고국으로 송금하여 경제개발의 밑천으로 바쳤습니다.</li>
+                <li><strong>국내 노동자와 농민:</strong> 국가 중심의 고속 성장을 위해 '낮은 임금'과 농가의 '낮은 쌀 가격' 정책을 견디며 열악한 환경 속에서도 수출 전선의 주춧돌이 되었습니다.</li>
+                <li><strong>산업 전선의 장병과 해외 인력:</strong> 중동의 폭염 속 건설 현장과 생사의 갈림길에 섰던 베트남 전쟁 전선으로 향했던 청년들의 숭고한 피와 땀이 있었습니다.</li>
+            </ul>
+        </div>
+
+        <div class="debate-card">
+            <strong>정의론과 역사 토론 질문:</strong><br>
+            철학자 존 롤스(John Rawls)는 <em>"정의는 타인이 얻을 더 큰 선을 위해 소수의 권리나 자유를 빼앗는 행위를 결코 용납하지 않는다"</em>고 보았습니다. 만약 국가 전체의 도약을 위해 개개인의 인권을 억압하고 민주 질서를 짓밟은 정치가 있다면, 그것은 성공한 경제적 '결과'만으로 모두 용서되고 정당화될 수 있는 것일까요?
+        </div>
+    </section>
+
+    <!-- 1. 시대 소개 -->
+    <section>
+        <h2>1. 시대 개관: 빛과 그림자가 공존한 시대 (1961 ~ 1979)</h2>
+        <p>박정희 정부기(1961~1979)는 1961년 5·16 군사 정변을 통해 군부 세력이 장악한 시점부터 1979년 10·26 사태로 종식되기까지 약 18년간의 세월을 말합니다. 이 시기는 급속한 <strong>수출 주도형 산업화</strong>로 한강의 기적을 만든 경제 발전기인 동시에, 정권 연장을 위해 헌법을 파괴하고 <strong>초헌법적인 독재 체제(유신 체제)</strong>를 구축하여 국민의 참정권과 기본권을 유린한 민주주의의 기나긴 겨울이었습니다.</p>
+    </section>
+
+    <!-- 2. 시간 순서 마인드맵 (웹 타임라인 구조) -->
+    <section>
+        <h2>2. 연대기 마인드맵: 역사적 사건들의 전개 과정</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1961년</div>
+                <div class="timeline-desc"><strong>5·16 군사 정변 발생:</strong> 육군 소장 박정희 주도로 비상 국무위원회를 해산하고 헌정을 중단했으며, '국가재건최고회의'와 '중앙정보부'를 창설해 정국 장악.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1965~1966년</div>
+                <div class="timeline-desc"><strong>한일 협정 비준 강행 및 베트남 파병:</strong> 6·3 시위 등 국민적 반대를 비상계엄 하에 진압하고 조약을 통과시켰으며, 브라운 각서(1966)를 통해 경제 및 군사 원조를 확보.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1967~1969년</div>
+                <div class="timeline-desc"><strong>독재 정지 작업과 3선 개헌:</strong> 부정선거 시위를 공안 정국으로 무마시킨 '동백림 사건' 발표 및 대통령의 3회 임기를 연장할 수 있는 3선 개헌안 야당 몰래 변칙 가결.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1972년</div>
+                <div class="timeline-desc"><strong>10월 유신 독재 선포:</strong> 냉전 완화 상황에서 평화통일 대비를 빌미로 전국 비상계엄령 선포, 국회 전격 해산 속 '유신 헌법'을 공포하여 종신 독재 완성.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1974~1976년</div>
+                <div class="timeline-desc"><strong>유신 반대 민주화 투쟁:</strong> 헌법 개정을 요구하는 목소리를 '긴급 조치(1~9호)'로 엄단하고 사법 살인인 '제2차 인혁당 사건'을 자행했으나, 명동성당의 '3·1 민주 구국 선언'으로 저항 지속.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1979년 (종말)</div>
+                <div class="timeline-desc"><strong>체제의 붕괴:</strong> YH 무역 여공 폭력 진압 사건 ➔ 김영삼 신민당 총재 의원직 제명 보복 ➔ 부산·마산 '부마 민주 항쟁' 폭발 ➔ 궁정동 권력 갈등 하 10·26 사태로 종식.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 주요 사건 상세 분석 -->
+    <section>
+        <h2>3. 핵심 역사적 사건 상세 분석</h2>
+        
+        <div class="event-card">
+            <h3>5·16 군사 정변과 군정의 수립 (1961)</h3>
+            <ul>
+                <li>장면 내각의 혼란 속 육군 소장 박정희 주도로 정변 실행</li>
+                <li><strong>국가재건최고회의:</strong> 입법·사법·행정의 전권을 통제하며 삼권분립 완전 말살</li>
+                <li>민간 정치 이양 공약 약속을 파기하고 민간인 신분 출마로 제5대 대통령 당선</li>
+            </ul>
+        </div>
+
+        <div class="event-card">
+            <h3>굴욕적 외교와 희생: 한일 협정(1965) & 베트남 파병(1964)</h3>
+            <ul>
+                <li><strong>한일 협정:</strong> 사죄와 배상, 약탈 문화유산 반환 문제를 남겨둔 채 조약을 강행하여 국민적인 '6·3 시위'를 군대 계엄령으로 진압하며 체결</li>
+                <li><strong>베트남 파병:</strong> 브라운 각서(1966) 등을 통해 막대한 차관과 군 현대화 자금을 획득해 도약했으나, 수많은 파병 장병의 사상과 고엽제 고통, 그리고 베트남 민간인 희생의 아픈 역사적 한계를 남김</li>
+            </ul>
+        </div>
+
+        <div class="event-card">
+            <h3>초헌법적 1인 종신 총통제: 10월 유신 체제 (1972)</h3>
+            <ul>
+                <li>비상계엄 선포 속 국회를 직권 해산하고 제정한 독재적 헌법</li>
+                <li><strong>체육관 선거:</strong> 통일주체국민회의 대의원들이 직접 선거권을 박탈당한 국민을 대신해 무기명 간선으로 선출</li>
+                <li>대통령에게 국회의원 1/3 추천 임명권, 국정 통제를 위한 무소불위의 <strong>긴급 조치권</strong> 부여</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 4. 형성평가 영역 -->
+    <section>
+        <h2>4. 형성평가: 배운 내용을 함께 확인해 볼까요?</h2>
+        
+        <!-- Q1 -->
+        <div class="quiz-item">
+            <div class="quiz-question">Q1. [단답형] 5·16 군사 정변 직후 군사 정부가 헌정을 완전 중단시키고 삼권분립의 원칙을 파괴한 채 입법, 사법, 행정 전권을 독점 장악했던 초헌법적 통치 기구의 명칭을 적으시오.</div>
+            <button class="ans-btn" onclick="toggleAnswer('ans1')">정답 확인</button>
+            <div id="ans1" class="ans-content">
+                <strong>정답: 국가재건최고회의</strong><br>
+                <em>해설:</em> 정변 직후 헌정을 전면 중단시킨 군부는 국가재건최고회의를 통해 군정을 선포하고 통치 전권을 불법적으로 장악했습니다.
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="quiz-item">
+            <div class="quiz-question">Q2. [객관식] 박정희 정부가 경제 개발 자금을 구하기 위해 추진한 대외 조치로, 일본의 약탈 문화유산 반환 및 식민지 지배 사죄가 누락되어 격렬한 대학생 중심의 '6·3 시위'를 일으켰던 이 조약은 무엇인가요?</div>
+            <div class="quiz-options">
+                <label><input type="radio" name="q2"> ① 한·미 상호 방위 조약</label>
+                <label><input type="radio" name="q2"> ② 한일 협정</label>
+                <label><input type="radio" name="q2"> ③ 브라운 각서</label>
+                <label><input type="radio" name="q2"> ④ 제1차 남북 공동 선언</label>
+            </div>
+            <button class="ans-btn" onclick="toggleAnswer('ans2')">정답 확인</button>
+            <div id="ans2" class="ans-content">
+                <strong>정답: ② 한일 협정</strong><br>
+                <em>해설:</em> 1965년 비상계엄 상황 속에서 군대와 경찰을 동원해 반대하는 국민의 목소리를 누르고 비준을 강행 통과시켰습니다.
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="quiz-item">
+            <div class="quiz-question">Q3. [O/X형] 10월 유신 헌법하에서 대통령은 임기 제한이 전혀 철폐되어 사실상 박정희 대통령 한 사람의 영구적 종신 집권이 법적으로 보장되었다. ( O / X )</div>
+            <button class="ans-btn" onclick="toggleAnswer('ans3')">정답 확인</button>
+            <div id="ans3" class="ans-content">
+                <strong>정답: O</strong><br>
+                <em>해설:</em> 유신 헌법은 대통령의 연임 횟수 제한을 완전히 삭제하였고, 임기를 6년으로 늘려 죽을 때까지 통치할 수 있는 법적 독재를 만들었습니다.
+            </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="quiz-item">
+            <div class="quiz-question">Q4. [서술형] 유신 독재 정권에서 대통령이 국정 전반에 걸쳐 국회의 사후 동의나 통제 없이도 전 국민의 소중한 헌법적 기본 인권을 제한하고 박탈할 수 있었던 최고 권한의 명칭을 쓰시오.</div>
+            <button class="ans-btn" onclick="toggleAnswer('ans4')">정답 확인</button>
+            <div id="ans4" class="ans-content">
+                <strong>정답: 긴급 조치권 (또는 긴급 조치)</strong><br>
+                <em>해설:</em> 유신 정권은 긴급 조치권(예: 긴급 조치 1호)을 활용해 유신 체제를 부정, 비방하거나 개정을 요구하는 아주 작은 민주적 표현조차 영장 없이 즉석 체포하여 처벌하였습니다.
+            </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="quiz-item">
+            <div class="quiz-question">Q5. [순서 배열] 다음 유신 정권의 몰락 과정에 있었던 사건들을 시간적 발생 순서대로 바르게 배열하시오.</div>
+            <p style="font-size: 0.95rem; margin-bottom: 5px;">(가) 야당 신민당 총재 김영삼 국회의원 보복 제명 조치</p>
+            <p style="font-size: 0.95rem; margin-bottom: 5px;">(나) 궁정동 안가 갈등 끝에 벌어진 10·26 사태</p>
+            <p style="font-size: 0.95rem; margin-bottom: 5px;">(다) 생존을 보장해 달라며 신민당사에서 농성하던 YH 무역 여공 강제 진압</p>
+            <p style="font-size: 0.95rem; margin-bottom: 15px;">(라) 부산과 마산 일대에서 격렬하게 일어난 부마 민주 항쟁</p>
+            
+            <button class="ans-btn" onclick="toggleAnswer('ans5')">정답 확인</button>
+            <div id="ans5" class="ans-content">
+                <strong>정답: (다) ➔ (가) ➔ (라) ➔ (나)</strong><br>
+                <em>해설:</em> 부당한 폐업 통보에 슬피 울며 농성한 YH 여공 진압[(다)]을 계기로 야당 김영삼 총재를 보복 제명[(가)]하자, 그 격노가 그의 정치 근거지였던 부산과 마산에서 부마 민주 항쟁[(라)]으로 이어졌으며, 이에 대한 무력 무자비 진압 정책을 두고 수뇌부들의 이견 속에서 10·26 사태[(나)]가 일어나 유신이 무너졌습니다.
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>© 3학년 역사(2학기) 수업 보조 교재 - 본 페이지는 비영리 교육용 목적을 위해 제작되었습니다.</p>
+</footer>
+
+<script>
+    // 아코디언 토글 기능 함수
+    function toggleAnswer(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "block") {
+            element.style.display = "none";
+        } else {
+            element.style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>
+```
+
