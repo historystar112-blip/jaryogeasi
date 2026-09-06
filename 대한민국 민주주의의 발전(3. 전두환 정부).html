@@ -1,0 +1,326 @@
+
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[역사 수업지] 신군부의 등장과 5·18 민주화 운동</title>
+    <style>
+        :root {
+            --primary-color: #4A235A; /* 민주주의를 향한 숭고한 희생을 기리는 짙은 보라색 */
+            --text-color: #212F3D;
+            --bg-color: #F4F6F6;
+            --card-bg: #E8DAEF;
+            --accent-color: #C0392B; /* 헌혈과 주먹밥 등 시민들의 뜨거운 연대를 상징 */
+            --muted-color: #797D7F;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 25px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-weight: 800;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--muted-color);
+            margin: 0;
+            font-style: italic;
+        }
+
+        section {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #EAEAEA;
+            padding-bottom: 10px;
+        }
+
+        .intro-box {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-top: 15px;
+            border: 1px solid #D7BDE2;
+        }
+
+        .intro-box blockquote {
+            font-style: italic;
+            font-weight: bold;
+            color: #512E5F;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 15px;
+            margin: 10px 0 20px 0;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 20px 0;
+            padding-left: 30px;
+            border-left: 2px solid #D5D8DC;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -37px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .event-card {
+            background-color: #FDFEFE;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .event-card h3 {
+            margin-top: 0;
+            color: var(--text-color);
+            font-size: 1.15rem;
+            border-bottom: 1px solid #E0DDD5;
+            padding-bottom: 5px;
+        }
+
+        .quiz-item {
+            background-color: #FAFAFA;
+            border: 1px solid #EAEAEA;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .quiz-question {
+            font-weight: bold;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+        }
+
+        .ans-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .ans-btn:hover {
+            background-color: #633974;
+        }
+
+        .ans-content {
+            display: none;
+            margin-top: 15px;
+            background-color: #F5EEF8;
+            border-left: 4px solid #8E44AD;
+            padding: 12px 18px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #2D3748;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>신군부의 등장과 5·18 민주화 운동</h1>
+        <p>어둠을 뚫고 피어난 민주주의의 불꽃 (1979~1980)</p>
+    </header>
+
+    <!-- 0. 도입 영역 -->
+    <section>
+        <h2>0. 도입: 부끄러워 붓을 놓아야 했던 언론, 그리고 시민의 용기</h2>
+        <div class="intro-box">
+            <blockquote>
+                "우리는 보았다. 사람이 개 끌리듯 끌려가 죽어가는 것을 두 눈으로 똑똑히 보았다. 그러나 신문에는 단 한 줄도 싣지 못하였다. 이에 우리는 부끄러워 붓을 놓는다." <br>
+                - 『전남매일신문』 기자 일동 (1980.5.20.)
+            </blockquote>
+            <p>1980년 5월, 광주에서 무자비한 국가 폭력이 벌어지고 있었지만, 신문과 방송은 철저히 통제되어 시민들을 '불순 세력'이나 '폭도'로 거짓 보도했습니다. 언론조차 진실을 말할 수 없었던 암흑의 시기, 생명의 위협 속에서도 민주주의를 지키기 위해 시민들은 왜 스스로 총을 들고 거리에 나서야만 했을까요? 그 참혹하고도 위대한 역사의 현장으로 들어가 봅니다.</p>
+        </div>
+    </section>
+
+    <!-- 1. 시대 소개 -->
+    <section>
+        <h2>1. 시대 개관: 서울의 봄을 짓밟은 군홧발</h2>
+        <p>1979년 10·26 사태로 박정희 대통령이 피살되면서 기나긴 유신 독재가 막을 내리는 듯했습니다. 국민들은 민주주의가 찾아올 것이라는 희망(<strong>'서울의 봄'</strong>)에 부풀어 올랐습니다. 그러나 전두환을 중심으로 한 신군부 세력이 <strong>12·12 군사 반란</strong>을 일으켜 무력으로 권력을 장악했습니다. 이에 맞서 유신 철폐와 신군부 퇴진을 요구하는 민주화 운동이 전국적으로 일어났고, 1980년 5월 광주에서는 부당한 국가 폭력에 맞선 <strong>5·18 민주화 운동</strong>이 전개되었습니다.</p>
+    </section>
+
+    <!-- 2. 시간 순서 마인드맵 -->
+    <section>
+        <h2>2. 연대기 마인드맵: 숨 가쁘게 전개된 1979~1980년</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1979. 10. 26.</div>
+                <div><strong>10·26 사태:</strong> 박정희 대통령 피살. 유신 체제가 사실상 붕괴되며 민주화에 대한 기대감 고조.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1979. 12. 12.</div>
+                <div><strong>12·12 군사 반란:</strong> 전두환, 노태우 등 '하나회' 소속 신군부 세력이 민주적 절차를 무시하고 군사 쿠데타로 권력 장악.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1980년 봄</div>
+                <div><strong>'서울의 봄'과 민주화 요구:</strong> 유신 헌법 폐지와 신군부 퇴진, 비상계엄 해제를 요구하는 시위 전국적 확산 (5.15 서울역 대규모 집회).</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1980. 5. 17.</div>
+                <div><strong>비상계엄 전국 확대:</strong> 신군부가 계엄령을 전국으로 확대하여 국회 기능을 정지시키고 주요 정치인 및 학생 대표 대거 체포.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1980. 5. 18.</div>
+                <div><strong>5·18 민주화 운동 시작:</strong> 광주에 투입된 공수부대의 무자비한 구타와 폭력 진압에 분노한 학생과 시민들의 대대적 저항 시작.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1980. 5. 27.</div>
+                <div><strong>전남도청 무력 진압:</strong> 탱크와 헬기를 동원한 계엄군이 새벽에 도청에 진입하여 시민군을 무자비하게 진압하며 항쟁 종료.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. 주요 사건 상세 분석 -->
+    <section>
+        <h2>3. 핵심 역사적 사건 상세 분석</h2>
+        
+        <div class="event-card">
+            <h3>🔹 민주주의의 후퇴: 12·12 군사 반란과 신군부</h3>
+            <ul>
+                <li><strong>배경:</strong> 유신 정권 붕괴 직후 과도기적 상황 속 권력의 공백 발생</li>
+                <li><strong>내용:</strong> 전두환을 보안사령관으로 하는 군대 내 비밀 사조직 '하나회(신군부)'가 하극상을 일으켜 군부와 국가 권력을 불법적으로 장악</li>
+                <li><strong>결과:</strong> 민주주의 회복을 열망하던 국민들의 뜻을 꺾고 강압적 통치(5.17 비상계엄 전국 확대) 예고</li>
+            </ul>
+        </div>
+
+        <div class="event-card">
+            <h3>🔹 저항과 고립: 5·18 민주화 운동의 전개 (1980)</h3>
+            <ul>
+                <li><strong>계엄군의 잔혹한 진압:</strong> 시위 학생뿐 아니라 무고한 시민들에게까지 총검을 휘두르고 집단 발포를 자행하여 수많은 사상자 발생</li>
+                <li><strong>시민군의 결성:</strong> 국가의 무차별 살상으로부터 스스로의 생명과 가족, 이웃을 지키기 위해 시민들이 자발적으로 무장</li>
+                <li><strong>빛나는 시민 정신:</strong> 고립된 시내에서 시민들은 자발적으로 치안을 유지하고, 주먹밥을 나누며, 부상자를 위해 헌혈에 동참. 언론 통제에 맞서 『투사 회보』를 발행하여 진실을 알림</li>
+            </ul>
+        </div>
+
+        <div class="event-card">
+            <h3>🔹 5·18 민주화 운동의 역사적 의의</h3>
+            <ul>
+                <li>부당한 국가 폭력과 불법적인 정권 탈취에 맞서 헌정 질서를 수호하려 한 정당한 민주주의 투쟁 (1997년 대법원 판결로 법적 정당성 확보)</li>
+                <li>1980년대 6월 민주 항쟁 등 <strong>한국 민주화 운동의 굳건한 토대</strong>가 됨</li>
+                <li>필리핀 등 아시아 여러 나라의 민주화 운동에 영감을 줌</li>
+                <li>2011년 그 역사적 가치를 인정받아 관련 기록물이 <strong>유네스코 세계 기록 유산</strong>으로 등재됨</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 4. 형성평가 영역 -->
+    <section>
+        <h2>4. 형성평가: 배운 내용을 함께 확인해 볼까요?</h2>
+        
+        <div class="quiz-item">
+            <div class="quiz-question">Q1. 1979년 10·26 사태 직후, 전두환 등 '하나회' 중심의 신군부 세력이 민주적 절차를 무시하고 무력으로 국가 권력을 장악한 사건은 무엇인가요?</div>
+            <button class="ans-btn" onclick="toggleAnswer('ans1')">정답 확인</button>
+            <div id="ans1" class="ans-content"><strong>정답: 12·12 군사 반란 (12·12 사태)</strong></div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="quiz-question">Q2. 1980년 5월, 광주 시민들이 스스로 무기를 들고 '시민군'을 조직할 수밖에 없었던 가장 큰 이유는 무엇입니까?</div>
+            <button class="ans-btn" onclick="toggleAnswer('ans2')">정답 확인</button>
+            <div id="ans2" class="ans-content"><strong>정답: 계엄군의 무차별적인 구타와 집단 발포로부터 자신과 이웃의 생명을 지키기 위해서였습니다.</strong></div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="quiz-question">Q3. [O/X형] 광주가 계엄군에 의해 봉쇄된 기간 동안, 시내에서는 극심한 혼란이 빚어져 약탈과 범죄가 끊이지 않았다.</div>
+            <button class="ans-btn" onclick="toggleAnswer('ans3')">정답 확인</button>
+            <div id="ans3" class="ans-content"><strong>정답: X</strong><br><em>해설: 광주 시민들은 스스로 치안을 유지하고, 주먹밥을 나누며 헌혈에 동참하는 등 고립된 상황 속에서도 높은 시민 의식과 연대를 보여주었습니다.</em></div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="quiz-question">Q4. 언론이 신군부에 의해 철저히 통제되어 진실이 보도되지 않자, 광주 시민들이 직접 소식을 알리기 위해 발행했던 유인물의 이름은 무엇인가요?</div>
+            <button class="ans-btn" onclick="toggleAnswer('ans4')">정답 확인</button>
+            <div id="ans4" class="ans-content"><strong>정답: 투사 회보</strong></div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="quiz-question">Q5. 2011년, 5·18 민주화 운동 당시의 일기, 취재 수첩, 공공 문서 등의 관련 기록물들이 그 역사적 중요성을 인정받아 등재된 것은 무엇인가요?</div>
+            <button class="ans-btn" onclick="toggleAnswer('ans5')">정답 확인</button>
+            <div id="ans5" class="ans-content"><strong>정답: 유네스코 세계 기록 유산</strong></div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>© 3학년 역사(2학기) 수업 보조 교재 - 본 페이지는 비영리 교육용 목적을 위해 제작되었습니다.</p>
+</footer>
+
+<script>
+    function toggleAnswer(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "block") {
+            element.style.display = "none";
+        } else {
+            element.style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>
+```
