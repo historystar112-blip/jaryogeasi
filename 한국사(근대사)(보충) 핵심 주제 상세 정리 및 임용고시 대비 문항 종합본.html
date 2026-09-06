@@ -1,14 +1,6 @@
-선생님께서 추가해주신 『뿌리깊은 한국사 샘이 깊은 이야기 7권』의 **1910년대 국내외 민족 독립 운동** 사료들을 꼼꼼히 분석하여, 핵심 정리 내용과 함께 임용고시 기출 형식에 맞춘 고품격 자작 문항을 새롭게 제작했습니다.
+요청하신 대로 문서 맨 마지막에 각 주제별로 사용된 출처 문헌과 사료를 목록화한 **[미주(Endnotes)]** 영역을 신설하여 추가했습니다 [1-6]. 문서 중간에 들어가는 각주(Footnotes)가 아닌, 전체 내용이 끝나는 하단에 깔끔하게 모아 정리했습니다.
 
-이번 업데이트의 핵심 사항은 다음과 같습니다:
-
-1. **[주제 7. 1910년대 국내외 민족 독립 운동] 주제 신설:** 1910년대 무단통치기 하에 전개된 국내 비밀결사(독립의군부, 대한광복회, 조선국민회)와 국외 독립운동 기지 개척(서간도, 북간도, 연해주의 자치 단체 및 무관학교), 그리고 대한민국 임시정부 수립의 이념적 토대가 된 대동단결선언까지의 핵심 요점을 한눈에 파악하실 수 있도록 체계적으로 정리해 넣었습니다 [1-4].
-2. **사료 직접 활용 신규 문항 2세트 추가:** 
-   * **[문항 7-1]:** 『뿌리깊은 한국사 7권』에 수록된 **'조선국권회복단 서약서'**, **'조선국민회(평양 숭실학교) 관련 사료'**, **'대동단결선언'**을 융합한 복합 문항입니다 [3-5].
-   * **[문항 7-2]:** **'서전서숙 교가'**, **'신흥무관학교(신흥강습소) 사료'**, **'대한인국민회 헌장'**을 접목하여 각 기지의 대표적 무장 단체와 자치 활동을 묻는 정밀 기입형 문항입니다 [6-8].
-3. **완벽한 시대순(총 14개 주제) 전면 재배치:** 1910년대 독립운동 주제가 완벽히 시대순에 녹아들 수 있도록, 기존 13개 주제에서 **총 14개 주제로 확장하여 고대부터 현대까지 물 흐르듯 이어지도록 재정렬**했습니다. 문항 번호와 정답 토글 스크립트 연동(ID `ans1` ~ `ans13`)도 모두 순서에 맞게 새로 맞췄습니다.
-
-아래 완성된 전체 HTML 코드를 복사하여 기존 파일에 덮어쓰기 하시면 바로 활용하실 수 있습니다!
+아래 완성된 전체 HTML 코드를 복사하여 기존 파일에 덮어쓰기 하시면 됩니다.
 
 ```html
 <!DOCTYPE html>
@@ -16,17 +8,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한국사 핵심 주제 상세 정리 및 임용고시 실전 기출 (1910년대 주제 및 사료 문항 추가판)</title>
+    <title>한국사 핵심 주제 상세 정리 및 임용고시 실전 기출 (미주 포함 총정리판)</title>
     <style>
         body { font-family: 'Malgun Gothic', '맑은 고딕', dotum, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; padding: 20px; margin: 0; }
         .container { max-width: 950px; margin: 0 auto; background-color: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); position: relative; }
         h1 { text-align: center; border-bottom: 3px solid #2c3e50; padding-bottom: 15px; margin-bottom: 30px; color: #2c3e50; font-size: 1.8em; line-height: 1.4; }
         h2 { color: #2980b9; border-left: 5px solid #2980b9; padding-left: 10px; margin-top: 50px; margin-bottom: 15px; font-size: 1.4em; background-color: #eaf2f8; padding: 10px; border-radius: 0 5px 5px 0; }
-        .summary-box { background-color: #fffde7; border: 1px solid #f1c40f; padding: 25px; margin-bottom: 30px; border-radius: 5px; }
+        
+        .summary-box { background-color: #fffde7; border: 1px solid #f1c40f; padding: 25px; margin-bottom: 15px; border-radius: 5px; }
         .summary-box h3 { margin-top: 0; color: #d35400; font-size: 1.2em; border-bottom: 1px dashed #d35400; padding-bottom: 10px; margin-bottom: 15px; }
         .summary-box p { margin-bottom: 10px; }
         .summary-box ul { padding-left: 20px; margin-bottom: 0; }
         .summary-box li { margin-bottom: 8px; }
+        
+        .keyword-box { background-color: #e8f8f5; border-left: 5px solid #1abc9c; padding: 15px; margin-bottom: 30px; border-radius: 0 5px 5px 0; }
+        .keyword-box h4 { margin-top: 0; color: #16a085; font-size: 1.1em; margin-bottom: 10px; }
+        .keyword-tag { display: inline-block; background-color: #1abc9c; color: white; padding: 5px 12px; border-radius: 15px; margin: 3px 5px 3px 0; font-size: 0.95em; font-weight: bold; box-shadow: 1px 1px 3px rgba(0,0,0,0.1); }
+        
         .question-header { font-size: 1.1em; font-weight: bold; margin-top: 30px; margin-bottom: 10px; color: #c0392b; }
         .source-box { border: 1px solid #7f8c8d; padding: 20px; margin-bottom: 15px; background-color: #fdfdfd; border-radius: 5px; }
         .source-box p { margin: 10px 0; }
@@ -42,9 +40,15 @@
         .copy-btn { position: absolute; top: 30px; right: 40px; padding: 10px 15px; background-color: #2c3e50; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 0.9em; font-weight: bold; }
         .copy-btn:hover { background-color: #1a252f; }
         
-        /* 기출 키워드 강조용 CSS 클래스 */
-        .exam-term-green { color: #27ae60; font-weight: bold; } /* 2020년 이후 기출 */
-        .exam-term-yellow { color: #d4ac0d; font-weight: bold; background-color: #fdfae6; padding: 1px 3px; border-radius: 3px; } /* 2014~2019 기출 */
+        .exam-term-green { color: #27ae60; font-weight: bold; }
+        .exam-term-yellow { color: #d4ac0d; font-weight: bold; background-color: #fdfae6; padding: 1px 3px; border-radius: 3px; }
+
+        /* 신규 추가: 미주(Endnotes) CSS */
+        .endnotes-box { background-color: #f8f9fa; border-top: 3px solid #bdc3c7; padding: 30px; margin-top: 60px; border-radius: 5px; font-size: 0.95em; color: #444; }
+        .endnotes-box h3 { color: #2c3e50; margin-top: 0; font-size: 1.3em; border-bottom: 1px solid #bdc3c7; padding-bottom: 10px; margin-bottom: 15px; }
+        .endnotes-box ol { padding-left: 20px; line-height: 1.8; margin-bottom: 0; }
+        .endnotes-box li { margin-bottom: 8px; }
+        .endnotes-box .note-title { font-weight: bold; color: #2980b9; }
     </style>
 </head>
 <body>
@@ -54,8 +58,8 @@
     <h1>한국사 임용고시 대비 핵심 주제 및 실전 기출<br>
         <span style="font-size: 0.55em; color: #27ae60;">(★초록색: 2020~2026학년도 기출 팩트체크)</span><br>
         <span style="font-size: 0.55em; color: #d4ac0d;">(★노란색: 2014~2019학년도 기출 팩트체크)</span><br>
-        <span style="font-size: 0.55em; color: #8e44ad;">(★보라색: 『뿌리깊은 한국사 7권』 기반 신규 분석)</span><br>
-        <span style="font-size: 0.5em; color: #555;">[시대순 배열판 - 14개 대주제 완성본]</span>
+        <span style="font-size: 0.55em; color: #1abc9c;">(★청록색: 출제 유력 핵심 키워드 정리)</span><br>
+        <span style="font-size: 0.5em; color: #555;">[시대순 배열 및 키워드 총정리판]</span>
     </h1>
 
     <!-- 주제 1 시작 (전근대 구휼 제도) -->
@@ -68,6 +72,11 @@
             <li><strong>환곡 제도의 운영과 폐단:</strong> 조선시대 빈민 구휼을 위해 운영된 환곡 제도는 곡식을 장기간 보관하며 쥐나 새 등에 의해 발생하는 <span class="exam-term-green">자연 소모분(포흠)을 보충</span>하기 위해 원곡에 일정 이자가 붙는 <strong><span class="exam-term-green">모곡(耗穀)</span></strong> 제도를 운영했습니다. 그러나 후기에 이르러 관리들의 탐학으로 세금처럼 변질되어 '삼정의 문란' 중 가장 심각한 폐단을 낳았습니다.</li>
         </ul>
     </div>
+    <div class="keyword-box">
+        <h4>🎯 [출제 유력 핵심 키워드]</h4>
+        <span class="keyword-tag">진대법</span> <span class="keyword-tag">흑창</span> <span class="keyword-tag">의창</span> <span class="keyword-tag">상평창</span> <span class="keyword-tag">물가 조절(안정)</span> <span class="keyword-tag">모곡(耗穀)</span> <span class="keyword-tag">자연 소모분(포흠) 보충</span>
+    </div>
+    
     <div class="question-header">[문항 1] (2026학년도 B형 8번 기출) 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]</div>
     <div class="source-box">
         <p><strong>(가)</strong> 가난하여 스스로 살아갈 수 없는 사람들을 널리 찾아 구휼하였다. 담당 관청에 명하여 ㉠ <u>매년 봄 3월부터 가을 7월까지 관곡을 내어 집안 식구의 많고 적음에 따라 차등 있게 빌려주어 구제하고, 겨울 10월에 이르러 갚게 하는 것</u>을 항식으로 삼으니, 사람들이 크게 기뻐하였다. <span class="source-ref">- 『삼국사기』 고구려본기 -</span></p>
@@ -102,6 +111,11 @@
             <li><strong>속오군 체제:</strong> 지방군은 양반부터 공사노비까지 모든 계층을 편성하여 평상시에는 생업(농사 등)에 종사하다가 유사시, 즉 위급한 전수(戰守) 상황에 전투에 동원되는 <strong><span class="exam-term-green">속오군</span></strong> 체제로 개편되었습니다.</li>
         </ul>
     </div>
+    <div class="keyword-box">
+        <h4>🎯 [출제 유력 핵심 키워드]</h4>
+        <span class="keyword-tag">진관 체제</span> <span class="keyword-tag">제승방략</span> <span class="keyword-tag">본진 붕괴 시 도성 위협</span> <span class="keyword-tag">훈련도감</span> <span class="keyword-tag">삼수미(三手米)</span> <span class="keyword-tag">양료(급료)</span> <span class="keyword-tag">속오군</span>
+    </div>
+
     <div class="question-header">[문항 2] (2026학년도 A형 10번 기출) 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]</div>
     <div class="source-box">
         <p><strong>(가)</strong> 영의정 유성룡이 아뢰었다. “군정(軍政)을 정비함에는 대강령과 대절목이 있으니 … 조종의 제도에는 8도의 각 고을에 모두 진관(鎭管)을 두어 병마절제사라고 하였으니 … 조종의 원대한 계획이 이와 같이 자세함에도 중세 이후로 좋은 법과 아름다운 제도가 일체 폐지되었고, 또 가벼운 생각과 얕은 꾀를 가진 사람이 스스로 자기의 뜻대로 새로운 규정을 만들어 내어 <strong>( ㉠ )</strong>(이)라 명명하였습니다. 당초 을묘년 왜변을 당하자 일시의 구급책으로 마련한 것이니 … <u>대개는 ( ㉠ )이/가 그르친 것입니다. … 임진년 여름에 적병이 승승장구하여 곧바로 경성에 당도하게 된 것도 대체로 이 때문입니다.</u>”</p>
@@ -137,6 +151,11 @@
             <li><strong>조선총독부 중추원 관제 개편(1921):</strong> 국권 피탈 후 일제는 총독의 자문기구로 중추원을 두고 조선의 <strong><span class="exam-term-green">구관(舊慣)</span></strong>과 제도를 조사시켰습니다. 1919년 3·1 운동 이후 이른바 '문화정치'를 표방한 일제는 한국인들의 <span class="exam-term-green">정치 참여(참정권) 요구</span>를 기만적으로 무마하고, <strong>식민 통치에 협력하는 친일파를 <span class="exam-term-green">회유·포섭</span></strong>하기 위해 중추원 참의의 수를 대폭 늘리고 대우를 격상시키는 관제 개정을 단행했습니다.</li>
         </ul>
     </div>
+    <div class="keyword-box">
+        <h4>🎯 [출제 유력 핵심 키워드]</h4>
+        <span class="keyword-tag">중추원</span> <span class="keyword-tag">관민공동회 결의(헌의 6조)</span> <span class="keyword-tag">근대적 의회(입법 기관)</span> <span class="keyword-tag">구관(舊慣) 조사</span> <span class="keyword-tag">참정권 요구 무마</span> <span class="keyword-tag">친일 세력 회유·포섭</span>
+    </div>
+
     <div class="question-header">[문항 3] (2024학년도 A형 7번 기출) 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]</div>
     <div class="source-box">
         <p><strong>(가) 1910년 이전 「( ㉠ )관제」의 주요 내용 변화</strong><br>
@@ -165,7 +184,7 @@
         - ㉠: <span class="exam-term-green">중추원</span><br>
         - 개정 이유: 독립협회의 <span class="exam-term-green">관민공동회 결의(헌의 6조)</span>를 수용하여, 중추원을 권한이 강화된 근대적인 의회(입법 기관)로 개편하고자 하였기 때문이다.</p>
         <p><strong>2. ㉡ 명칭:</strong> <span class="exam-term-green">구관(舊慣)</span></p>
-        <p><strong>3. (나) D→E 개정 이유:</strong> 3·1 운동 이후 이른바 '문화 정치'를 표방하면서, 한국인의 <span class="exam-term-green">정치 참여(참정권) 요구</span>를 기만적으로 무마하고식민 통치에 협력하는 지역 유력자 등 친일 세력을 널리 <span class="exam-term-green">회유·포섭</span>하기 위해 참의의 수를 크게 늘리고 대우를 높인 것이다.</p>
+        <p><strong>3. (나) D→E 개정 이유:</strong> 3·1 운동 이후 이른바 '문화 정치'를 표방하면서, 한국인의 <span class="exam-term-green">정치 참여(참정권) 요구</span>를 기만적으로 무마하고 식민 통치에 협력하는 지역 유력자 등 친일 세력을 널리 <span class="exam-term-green">회유·포섭</span>하기 위해 참의의 수를 크게 늘리고 대우를 높인 것이다.</p>
     </div>
 
     <!-- 주제 4 시작 (실력양성운동 - 개항기~일제강점기 초반) -->
@@ -178,6 +197,11 @@
             <li><strong>사회주의계의 반대 논리:</strong> 사회주의자들은 소수 부르주아를 위한 고등교육기관 설립보다는 노동자 강습소, 농촌 야학 등 절대 다수 민중을 위한 대중 <span class="exam-term-green">보통 교육</span>의 보급이 훨씬 더 시급하다고 주장했습니다.</li>
         </ul>
     </div>
+    <div class="keyword-box">
+        <h4>🎯 [출제 유력 핵심 키워드]</h4>
+        <span class="keyword-tag">국채보상운동</span> <span class="keyword-tag">비녀와 가락지</span> <span class="keyword-tag">양기탁</span> <span class="keyword-tag">대한매일신보</span> <span class="keyword-tag">민립대학설립운동</span> <span class="keyword-tag">이상재</span> <span class="keyword-tag">보통 교육 중시(사회주의계 반대 논리)</span>
+    </div>
+
     <div class="question-header">[문항 4] (2025학년도 A형 3번 기출) 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]</div>
     <div class="source-box">
         <p><strong>(가)</strong> 우리가 한낱 여자의 몸으로 규문에 처해 삼종지의에 간섭할 바 아니오나 나라 위하는 마음과 백성 된 도리에 어찌 남녀가 다르리오. 듣자오니 국채를 갚으려고 2천만 동포들이 3개월간 담배를 피우지 않고 대전을 모집한다 하오니 족히 사람으로 하여금 감동케 할 것이오, 전정에 아름다움이라. … (중략) … ㉠ <u>뜻있는 부인 동포들은 다소를 불문하고 혈심으로 의연하와 국채를 청산케 하시면 천만다행이겠음.</u> <span class="source-ref">- 『㉡ 대한매일신보』 1907년 3월 8일 -</span></p>
@@ -212,6 +236,11 @@
             <li><strong>1930년대 이후 민족말살통치 및 전시동원체제:</strong> 만주사변과 중일전쟁 등 침략 전쟁을 확대하며 한반도를 병참기지화했다. 1938년 <strong>국가총동원법</strong>을 시행하여 인적·물적 자원을 가혹하게 수탈했고, 전쟁에 동원하기 위해 <strong>내선일체</strong>를 내세운 황국신민화 정책을 강행하며 황국신민의 서사 낭송과 <strong>창씨개명</strong> 등을 통해 민족 정체성을 말살하려 했다.</li>
         </ul>
     </div>
+    <div class="keyword-box">
+        <h4>🎯 [출제 유력 핵심 키워드]</h4>
+        <span class="keyword-tag">무단통치</span> <span class="keyword-tag">헌병경찰제</span> <span class="keyword-tag">3·1 운동</span> <span class="keyword-tag">문화정치</span> <span class="keyword-tag">친일 세력 육성(분할통치)</span> <span class="keyword-tag">민족말살통치</span> <span class="keyword-tag">내선일체</span> <span class="keyword-tag">창씨개명</span> <span class="keyword-tag">국가총동원법</span>
+    </div>
+
     <div class="question-header">[문항 5] 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. (자작 문항) [4점]</div>
     <div class="source-box">
         <p><strong>(가)</strong> 1910년 대한제국을 병합한 일제는 조선총독부를 설치하고 무단통치를 실시했다. 이를 뒷받침하는 핵심 제도는 <strong>( ㉠ )</strong>제도였다. 이들은 의병 및 독립운동가를 탄압할 뿐만 아니라 사법재판 없이도 한국인에게 태형과 구류를 가할 수 있었다.</p>
@@ -248,6 +277,11 @@
             <li><strong>농촌진흥운동 (1932~):</strong> 대공황에 따른 농가 파탄과 1930년대 혁명적 농민조합운동의 급진화에 위기감을 느낀 우가키 총독 주도로 실시되었습니다. 다각 경영과 생활 개선(음주·도박 금지 등)을 표방했으나, 근본 목적은 빈곤의 책임을 농민에게 돌려 불만을 무마하고, <strong>마을마다 식민 통치에 협조하는 중견인물(체제 순응자)을 양성하여 농촌 사회를 깊숙이 통제</strong>하려는 데 있었습니다.</li>
         </ul>
     </div>
+    <div class="keyword-box">
+        <h4>🎯 [출제 유력 핵심 키워드]</h4>
+        <span class="keyword-tag">토지조사사업</span> <span class="keyword-tag">관습적 경작권 상실</span> <span class="keyword-tag">기한부 소작농</span> <span class="keyword-tag">산미증식계획</span> <span class="keyword-tag">농업 공황(대공황)</span> <span class="keyword-tag">농촌진흥운동</span> <span class="keyword-tag">중견인물 양성(체제 통제)</span>
+    </div>
+
     <div class="question-header">[문항 6] 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. (자작 문항) [4점]</div>
     <div class="source-box">
         <p><strong>(가)</strong> 일제는 1910년부터 1918년까지 <strong>( ㉠ )</strong>을/를 실시하여 토지 소유권 확정과 등기제도를 확립하였다. 이로 인해 오랫동안 관습적으로 경작권을 보호받아 오던 농민들은 그 권리를 잃고 소작농으로 전락하거나 도시로 이주하였다.</p>
@@ -259,7 +293,7 @@
     <div class="instruction-box">
         <strong>&lt;작성 방법&gt;</strong>
         <ul>
-            <li>괄호 안의 ㉠, ㉡, ㉢에 들어갈 정책 및 운동의 명칭을 순서대로 쓸 것.</li>
+            <li>괄호 안의 ㉠, ㉡, ㉢에 들어갈 정책 및 운동의 명칭을 순서대로 쓸 일 것.</li>
             <li>제시문 (나)의 ㉡계획이 1934년에 일시적으로 중단되게 된 경제적·시대적 배경을 1가지 서술할 것.</li>
             <li>제시문 (다)의 ㉢운동을 통해 일제가 달성하고자 했던 근본적인 정치적 목적(의도)을 '통치 방식'과 관련지어 서술할 것.</li>
         </ul>
@@ -272,28 +306,32 @@
         <p><strong>3. ㉢ 농촌진흥운동의 정치적 목적:</strong> 농촌 빈곤의 원인을 농민 스스로의 게으름 탓으로 돌리며 혁명적 투쟁의 불만을 무마하고, 마을마다 <strong>식민 통치에 협조하는 중견인물(체제 순응자)을 양성하여 기층 농촌 사회를 깊숙이 통제</strong>하고자 하였다.</p>
     </div>
 
-    <!-- 신규 신설 주제 7 시작 (1910년대 국내외 독립운동) -->
+    <!-- 주제 7 시작 (1910년대 국내외 독립운동) -->
     <h2>주제 7. 1910년대 국내외 민족 독립 운동 (★뿌리깊은 한국사 7권 사료 융합)</h2>
     <div class="summary-box">
         <h3>[핵심 내용 상세 정리]</h3>
         <ul>
-            <li><strong>국내 비밀결사 운동의 전개:</strong> 1910년대 일제의 강력한 무단통치 하에서 국내 민족 운동은 비밀결사 형태로 전개되었습니다 [1, 9].
+            <li><strong>국내 비밀결사 운동의 전개:</strong> 1910년대 일제의 강력한 무단통치 하에서 국내 민족 운동은 비밀결사 형태로 전개되었습니다.
                 <ul>
-                    <li><strong><span class="exam-term-yellow">독립의군부</span>(1912):</strong> 임병찬이 고종의 밀칙을 받아 결성한 복벽주의 단체로, 조선총독 등에게 국권반환요구서를 송부하고 전국적인 태극기 게양 및 국권 회복 거사를 계획했으나 사전에 탄로 났습니다 [1, 5, 10].</li>
-                    <li><strong><span class="exam-term-yellow">대한광복회</span>(1915):</strong> 박상진 등이 주도하여 조선국권회복단과 풍기광복단을 통합하여 결성한 단체로, **공화주의**를 표방하였습니다 [1, 11-13]. 군자금 모집을 위해 상회(상덕태상회, 백산상회, 대동상점 등)를 연락망으로 삼았으며, 협조하지 않는 친일 부호(장승원, 박용하 등)를 처단하는 무장 혁명 노선을 걸었습니다 [12-14].</li>
-                    <li><strong>조선국민회(1915):</strong> 평양 숭실학교 출신 장일환 등이 하와이의 박용만이 이끌던 대조선국민군단의 국내 지부로서 비밀리에 설립하여 혈서 서약과 군자금 조달을 추진했습니다 [5, 15].</li>
+                    <li><strong><span class="exam-term-yellow">독립의군부</span>(1912):</strong> 임병찬이 고종의 밀칙을 받아 결성한 복벽주의 단체로, 조선총독 등에게 국권반환요구서를 송부하고 전국적인 태극기 게양 및 국권 회복 거사를 계획했으나 사전에 탄로 났습니다.</li>
+                    <li><strong><span class="exam-term-yellow">대한광복회</span>(1915):</strong> 박상진 등이 주도하여 조선국권회복단과 풍기광복단을 통합하여 결성한 단체로, <strong>공화주의</strong>를 표방하였습니다. 군자금 모집을 위해 상회(상덕태상회, 백산상회, 대동상점 등)를 연락망으로 삼았으며, 협조하지 않는 친일 부호(장승원, 박용하 등)를 처단하는 무장 혁명 노선을 걸었습니다.</li>
+                    <li><strong>조선국민회(1915):</strong> 평양 숭실학교 출신 장일환 등이 하와이의 박용만이 이끌던 대조선국민군단의 국내 지부로서 비밀리에 설립하여 혈서 서약과 군자금 조달을 추진했습니다.</li>
                 </ul>
             </li>
-            <li><strong>국외 독립운동 기지 개척 및 무장독립 전쟁 준비:</strong> 국경 너머로 이주한 동포 사회를 바탕으로 자치와 군사 훈련을 병행하는 독립군 기지가 구축되었습니다 [1, 2, 16].
+            <li><strong>국외 독립운동 기지 개척 및 무장독립 전쟁 준비:</strong> 국경 너머로 이주한 동포 사회를 바탕으로 자치와 군사 훈련을 병행하는 독립군 기지가 구축되었습니다.
                 <ul>
-                    <li><strong>서간도(남만주):</strong> 신민회 간부인 이회영, 이시영 일가와 이동녕, 이상룡 등이 삼원보(싼위안푸)로 망명하여 민단 조직인 **경학사**(이후 부민단-한족회로 발전)와 무관 교육 기관인 **신흥강습소(신흥무관학교의 전신)**를 설립하고 군사 지도자를 대거 양성했습니다 [6, 17-20].</li>
-                    <li><strong>북간도:</strong> 이상설이 용정에 설립한 **서전서숙**(만주 신교육의 효시)을 기반으로 김약연이 **명동학교**를 세워 민족 교육을 주도했고 [2, 7], 대종교도들은 무장 단체인 **중광단**을 조직하여 훗날 북로군정서의 기틀을 마련했습니다 [19].</li>
-                    <li><strong>연해주(블라디보스토크):</strong> 성명회와 **권업회**가 성립되어 한인 자치와 계몽에 힘썼으며, 1914년 이상설을 대통령, 이동휘를 부통령으로 하는 최초의 망명정부 형태인 **대한광복군 정부**를 수립하였습니다 [1, 2, 21, 22].</li>
-                    <li><strong>미주 지역:</strong> 샌프란시스코의 **대한인국민회**(안창호·박용만)가 임시정부 역할을 표방하며 국민의무금을 징수하는 자치 제도를 실시했고 [8, 22], 하와이에서는 박용만이 사관 양성을 위해 **대조선국민군단**을 결성하였습니다 [1, 15].</li>
+                    <li><strong>서간도(남만주):</strong> 신민회 간부인 이회영, 이시영 일가와 이동녕, 이상룡 등이 삼원보(싼위안푸)로 망명하여 민단 조직인 <strong>경학사</strong>(이후 부민단-한족회로 발전)와 무관 교육 기관인 <strong>신흥강습소(신흥무관학교의 전신)</strong>를 설립하고 군사 지도자를 대거 양성했습니다.</li>
+                    <li><strong>북간도:</strong> 이상설이 용정에 설립한 <strong>서전서숙</strong>(만주 신교육의 효시)을 기반으로 김약연이 <strong>명동학교</strong>를 세워 민족 교육을 주도했고, 대종교도들은 무장 단체인 <strong>중광단</strong>을 조직하여 훗날 북로군정서의 기틀을 마련했습니다.</li>
+                    <li><strong>연해주(블라디보스토크):</strong> 성명회와 <strong>권업회</strong>가 성립되어 한인 자치와 계몽에 힘썼으며, 1914년 이상설을 대통령, 이동휘를 부통령으로 하는 최초의 망명정부 형태인 <strong>대한광복군 정부</strong>를 수립하였습니다.</li>
+                    <li><strong>미주 지역:</strong> 샌프란시스코의 <strong>대한인국민회</strong>(안창호·박용만)가 임시정부 역할을 표방하며 국민의무금을 징수하는 자치 제도를 실시했고, 하와이에서는 박용만이 사관 양성을 위해 <strong>대조선국민군단</strong>을 결성하였습니다.</li>
                 </ul>
             </li>
-            <li><strong><span class="exam-term-yellow">대동단결선언</span>(1917.7):</strong> 상하이에서 신규식, 조소앙 등 독립운동 지도자 14명이 발표한 선언으로, 융희 황제가 영토·인민·주권을 포기한 날(경술국치)이 곧 우리 동포가 삼보를 상속한 날이라는 **국민주권설**을 천명하여, 군주 주권에서 국민 주권으로 나아가는 민주공화제의 이념적 지향과 대한민국 임시정부 수립의 정당한 법리적 토대를 닦았습니다 [4, 23].</li>
+            <li><strong><span class="exam-term-yellow">대동단결선언</span>(1917.7):</strong> 상하이에서 신규식, 조소앙 등 독립운동 지도자 14명이 발표한 선언으로, 융희 황제가 영토·인민·주권을 포기한 날(경술국치)이 곧 우리 동포가 삼보를 상속한 날이라는 <strong>국민주권설</strong>을 천명하여, 군주 주권에서 국민 주권으로 나아가는 민주공화제의 이념적 지향과 대한민국 임시정부 수립의 정당한 법리적 토대를 닦았습니다.</li>
         </ul>
+    </div>
+    <div class="keyword-box">
+        <h4>🎯 [출제 유력 핵심 키워드]</h4>
+        <span class="keyword-tag">독립의군부(복벽주의)</span> <span class="keyword-tag">대한광복회(공화주의)</span> <span class="keyword-tag">조선국민회</span> <span class="keyword-tag">대조선국민군단</span> <span class="keyword-tag">신흥강습소(서간도)</span> <span class="keyword-tag">서전서숙(북간도)</span> <span class="keyword-tag">대한광복군 정부(연해주)</span> <span class="keyword-tag">대한인국민회(미주)</span> <span class="keyword-tag">대동단결선언(국민주권설)</span>
     </div>
 
     <div class="question-header" style="color: #8e44ad;">[문항 7-1] 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. (『뿌리깊은 한국사 7권』 사료 활용 신규 문항) [4점]</div>
@@ -307,7 +345,7 @@
         1. 결사대로 하여금 살육케 할 것.<br>
         <span class="source-ref">- 『한민족독립운동사자료집』 -</span></p>
         <div class="divider"></div>
-        <p><strong>(나)</strong> 숭실학교 출신의 장일환은 1914년 하와이에서 박용만을 만나 뜻을 같이하고 귀국하여, 하와이 국민군단 국내지부로서 평양에서 <strong>( ㉠ )</strong>을/를 조직했다(1915.3). 대개 숭실학교 재학생과 졸업생을 중심으로 했는데, 회원들은 ‘대한독립 결사’ 등의 혈서를 써서 결의를 굳히고, 국외의 동지들과도 연락을 도모하였다. <span class="source-ref">- 『한국독립운동사』 -</span></p>
+        <p><strong>(나)</strong> 숭실학교 출신의 장일환은 1914년 하와이에서 박용만을 만나 뜻 같이하고 귀국하여, 하와이 국민군단 국내지부로서 평양에서 <strong>( ㉠ )</strong>을/를 조직했다(1915.3). 대개 숭실학교 재학생과 졸업생을 중심으로 했는데, 회원들은 ‘대한독립 결사’ 등의 혈서를 써서 결의를 굳히고, 국외의 동지들과도 연락을 도모하였다. <span class="source-ref">- 『한국독립운동사』 -</span></p>
         <div class="divider"></div>
         <p><strong>(다)</strong> 우리 대한 삼보(三寶, 영토·인민·주권)는 즉 영토와 인민과 주권이라. 융희 황제가 삼보를 포기한 8월 29일은 즉 우리 동포가 삼보를 상속한 날이니, 군주 주권의 구학(舊學)이 가고 민중 주권의 신치가 도래한 도리라. … (중략) … 고로 오인은 대동단결하여 하나의 최고의 주권을 상속한 독립된 최고의 정부인 임시정부를 수립할 것을 제창하노라. <span class="source-ref">- 「 <strong>( ㉡ )</strong> 」 (1917) -</span></p>
     </div>
@@ -324,13 +362,13 @@
         <h3 style="color: #8e44ad;">[모범 답안]</h3>
         <p><strong>1. 단체명 및 지향 체제:</strong><br>
         - 단체: <span class="exam-term-yellow">대한광복회</span> (또는 광복회)<br>
-        - 국가 체제 특징: 과거 복벽주의(대한제국 복원)에서 완전히 탈피하여, 주권이 국민에게 있는 <strong>민주 공화정(공화주의)</strong> 수립을 천명하였다 [1, 11, 12].</p>
+        - 국가 체제 특징: 과거 복벽주의(대한제국 복원)에서 완전히 탈피하여, 주권이 국민에게 있는 <strong>민주 공화정(공화주의)</strong> 수립을 천명하였다.</p>
         <p><strong>2. ㉠ 단체 및 하와이 군사 조직 명칭:</strong><br>
-        - ㉠ 단체: 조선국민회 [5]<br>
-        - 군사 조직: 대조선국민군단 [1, 15]</p>
+        - ㉠ 단체: 조선국민회<br>
+        - 군사 조직: 대조선국민군단</p>
         <p><strong>3. ㉡ 선언 및 사상적 의의:</strong><br>
-        - ㉡ 선언: <span class="exam-term-yellow">대동단결선언</span> [4]<br>
-        - 사상적 의의: 황제가 주권을 포기한 경술국치가 곧 백성이 주권을 승계한 날이라는 **'국민주권설'**을 최초로 제창하여 임시정부 수립의 논리적 기초를 닦았다 [4, 23].</p>
+        - ㉡ 선언: <span class="exam-term-yellow">대동단결선언</span><br>
+        - 사상적 의의: 황제가 주권을 포기한 경술국치가 곧 백성이 주권을 승계한 날이라는 **'국민주권설'**을 최초로 제창하여 임시정부 수립의 논리적 기초를 닦았다.</p>
     </div>
 
     <div class="question-header" style="color: #8e44ad;">[문항 7-2] 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 빈칸에 알맞은 명칭이나 용어를 쓰시오. (『뿌리깊은 한국사 7권』 사료 활용 신규 문항) [4점]</div>
@@ -356,14 +394,13 @@
     <div class="answer-content" id="ans7_2" style="border-left-color: #8e44ad; background-color: #f4ecf7;">
         <h3 style="color: #8e44ad;">[모범 답안]</h3>
         <p><strong>1. ㉠ 학교 및 망명정부 명칭:</strong><br>
-        - ㉠ 학교: 서전서숙 [7]<br>
-        - 망명정부: 대한광복군 정부 [1, 2, 22]</p>
+        - ㉠ 학교: 서전서숙<br>
+        - 망명정부: 대한광복군 정부</p>
         <p><strong>2. ㉡ 학교 및 ㉢ 비밀결사 명칭:</strong><br>
-        - ㉡ 학교: 신흥강습소 [6, 19]<br>
-        - ㉢ 단체: 신민회 [6, 24, 25]</p>
-        <p><strong>3. ㉣ 자치 조직 명칭:</strong> 대한인국민회 [8, 22]</p>
+        - ㉡ 학교: 신흥강습소<br>
+        - ㉢ 단체: 신민회</p>
+        <p><strong>3. ㉣ 자치 조직 명칭:</strong> 대한인국민회</p>
     </div>
-    <!-- 신규 신설 주제 7 끝 -->
 
     <!-- 주제 8 시작 (일제강점기 대중운동) -->
     <h2>주제 8. 일제강점기 대중운동 (형평, 소년, 여성운동) (1920s)</h2>
@@ -375,6 +412,11 @@
             <li><strong>여성 운동과 근우회:</strong> 1920년대 후반 민족주의 진영과 사회주의 진영이 이념을 넘어 연대하는 <span class="exam-term-yellow">민족협동전선(신간회)</span> 결성 흐름에 발맞추어, 1927년 좌우 합작의 전국적 여성 조직인 <span class="exam-term-yellow">근우회</span>가 창립되었습니다. 이들은 선언문을 통해 여성의 불합리를 봉건적 유물과 현대적 모순으로 규정했습니다.</li>
         </ul>
     </div>
+    <div class="keyword-box">
+        <h4>🎯 [출제 유력 핵심 키워드]</h4>
+        <span class="keyword-tag">조선형평사</span> <span class="keyword-tag">백정 차별 철폐</span> <span class="keyword-tag">천도교소년회(방정환)</span> <span class="keyword-tag">근우회</span> <span class="keyword-tag">민족유일당운동</span> <span class="keyword-tag">신간회(민족협동전선)</span>
+    </div>
+
     <div class="question-header">[문항 8] 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. (2018학년도 B형 1번 기출 변형) [4점]</div>
     <div class="source-box">
         <p><strong>(가)</strong> 1923년 진주 지역 백정 이학찬 등이 중심이 되어 <strong>( ㉠ )</strong>을/를 창립하였다. 이들은 공평은 사회의 근본이고 애정은 인류의 본성이라고 천명하며, 호적의 신분 표시 폐지 등 사회적 차별 철폐를 요구하는 운동을 전개하였다.</p>
@@ -407,6 +449,11 @@
             <li><strong>일제의 대응:</strong> 조선총독부는 농가 파탄과 급진적 농민조합운동에 대응하기 위해 1932년부터 관제 운동인 <strong>농촌진흥운동</strong>을 전개하였고, 「조선농지령」 제정 등으로 소작농을 회유하려 했습니다.</li>
         </ul>
     </div>
+    <div class="keyword-box">
+        <h4>🎯 [출제 유력 핵심 키워드]</h4>
+        <span class="keyword-tag">암태도 소작쟁의</span> <span class="keyword-tag">수리조합 반대운동</span> <span class="keyword-tag">곡물검사제 반대운동</span> <span class="keyword-tag">혁명적 농민조합(비합법)</span> <span class="keyword-tag">토지혁명</span> <span class="keyword-tag">노농 소비에트 건설</span>
+    </div>
+
     <div class="question-header">[문항 9] 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. (자작 문항) [4점]</div>
     <div class="source-box">
         <p>1930년 농업공황을 전후로 소작쟁의가 더욱 늘어나고 쟁의 참여자도 증가했다. 이 시기에는 1920년대와 달리 기존의 합법적 농민조합을 비합법적인 <strong>( ㉠ )</strong>(으)로 바꾸는 작업이 진행되었는데, 이들은 <strong>( ㉡ )</strong>(과)와 노농 소비에트 건설을 핵심 운동 목표로 삼아 항일 투쟁을 전개하였다. 한편 조선총독부는 농가경제 파탄과 급진적인 농민운동 확산에 대응하기 위해 1932년 7월부터 관제 운동인 <strong>( ㉢ )</strong>(을)를 전개하여 통치의 협조자를 양성하고자 했다.</p>
@@ -437,6 +484,10 @@
             <li><strong>한인애국단의 결성과 활동 (1931):</strong> 만주사변 직후 대한민국 임시정부의 주석 김구의 직접 지휘 아래 침체에 빠진 임정의 활로를 모색하기 위해 조직되었다. 단원들은 거사 직전 태극기 앞에서 단장 김구와 함께 가입 선서식을 치르고, "적성(赤誠)으로써... 적국의 수괴를 도륙하기로 맹서하나이다"라는 내용의 <strong>한인애국단 선서문</strong>을 낭독하고 맹세하였다. 대표적으로 <strong>이봉창 의사의 도쿄 천황 폭살 기도 의거 (1932.1.8)</strong>는 이누카이 내각의 총사퇴와 일제 경호 관련자 문책을 유발하며 큰 충격을 주었고, <strong>윤봉길 의사의 상하이 홍커우 공원 폭탄 투척 의거 (1932.4.29)</strong>는 상하이 파견군 사령관 시라카와 등 일제 군·정 수뇌부를 처단하여 중국 국민정부가 임시정부를 적극적으로 지원 및 협력하게 만드는 결정적 계기가 되었다. 이 의열 투쟁들의 기록을 모아 김구는 『도외실기(도왜실기)』를 집필 및 편찬하여 전 세계 인도주의자들의 공론을 구하고 위경에 처한 중화 민족과의 연대를 도모하였다.</li>
             <li><strong>한국광복군의 활동과 지휘권 시련:</strong> 1940년 창설된 한국광복군은 1942년 조선의용대 병력이 합류하면서 군사적 성장을 이룩했다. 태평양 전쟁기 영국군과 연대해 인도·미얀마 전선에서 포로 심문, 암호 번역 등의 특수 공작을 전개했다. 그러나 중국 정부는 군사·재정 지원을 조건으로 '한국광복군 행동 9개준승'을 요구하여 광복군의 <span class="exam-term-yellow">지휘권(통수권)을 장악</span>하고 간섭하였다.</li>
         </ul>
+    </div>
+    <div class="keyword-box">
+        <h4>🎯 [출제 유력 핵심 키워드]</h4>
+        <span class="keyword-tag">의열단(김원봉)</span> <span class="keyword-tag">조선혁명선언(신채호)</span> <span class="keyword-tag">민중 직접 폭력 혁명</span> <span class="keyword-tag">황푸군관학교</span> <span class="keyword-tag">조선인혁명간부학교</span> <span class="keyword-tag">조선민족전선연맹(좌우합작)</span> <span class="keyword-tag">한인애국단(김구)</span> <span class="keyword-tag">도왜실기</span> <span class="keyword-tag">한국광복군</span> <span class="keyword-tag">지휘권(통수권) 장악</span>
     </div>
     
     <div class="question-header">[문항 10-1] (2016학년도 B형 2번 기출 관련 변형) 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]</div>
@@ -489,7 +540,6 @@
         <p><strong>3. ㉢ 서적 편찬 목적:</strong> 이봉창, 윤봉길 등의 의열 투쟁 실상을 기록하여 전 세계 인도주의자들의 동정(공론)을 구하고, 일본의 침략으로 <strong>위경에 처한 중국(중화 민족)과의 연대를 도모하기 위해서</strong>이다.</p>
     </div>
 
-    <!-- 신규 자작 문항 10-3 시작 (김원봉론, 조선혁명선언 기반) -->
     <div class="question-header" style="color: #2980b9;">[문항 10-3] 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 빈칸에 알맞은 용어나 명칭을 쓰시오. (자작 문항) [4점]</div>
     <div class="source-box">
         <p><strong>(가)</strong> 약산 김원봉 씨는 경남 밀양 출생으로 … 1925년 씨는 국제 정세로 보아서 개인적 폭력 정책으로서는 도저히 일제의 세력을 타도할 수 없음을 깨닫고, 좀 더 방대한 계획을 세워 위선 군사 간부를 양성키로 했다. 그리하여 그 자신 <strong>( ㉠ )</strong>(에) 들어가서 군사 교육을 받았다. … 1932년에는 남경에서 중국 정부와의 교섭이 성공되어, 남경에 조선인의 <strong>( ㉡ )</strong>을/를 창설하여, 1, 2, 3기의 졸업생을 내어 … (후략)<br><span class="source-ref">- 김오성, 『지도자군상』 「김원봉론」 -</span></p>
@@ -509,7 +559,6 @@
         <p><strong>1. ㉠, ㉡ 학교 명칭:</strong> ㉠ 황푸군관학교 (또는 황포군관학교), ㉡ 조선인혁명간부학교 (또는 조선혁명간부학교)</p>
         <p><strong>2. ㉢ 용어 및 집필자 이름:</strong> ㉢ 혁명 / 인물: 신채호</p>
     </div>
-    <!-- 신규 자작 문항 10-3 끝 -->
 
     <!-- 주제 11 시작 (조선어 연구 및 민족운동) -->
     <h2>주제 11. 근대 조선어 연구 및 민족운동 (1900s~1930s)</h2>
@@ -523,6 +572,11 @@
             <li><strong>일제의 탄압과 지속적 노력:</strong> 문자보급운동은 1935년 조선총독부의 탄압으로 강제 중단되었으나, 조선어학회는 이에 굴하지 않고 <strong>우리말 사전 편찬</strong>과 <strong>외래어 표기법 연구</strong>를 이어가며 현대 한글 체계의 토대를 쌓았습니다.</li>
         </ul>
     </div>
+    <div class="keyword-box">
+        <h4>🎯 [출제 유력 핵심 키워드]</h4>
+        <span class="keyword-tag">국문연구소(주시경)</span> <span class="keyword-tag">조선어연구회</span> <span class="keyword-tag">조선어학회</span> <span class="keyword-tag">한글 맞춤법 통일안</span> <span class="keyword-tag">문자보급운동</span> <span class="keyword-tag">사전 편찬</span> <span class="keyword-tag">외래어 표기법</span>
+    </div>
+
     <div class="question-header">[문항 11] 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. (자작 문항) [4점]</div>
     <div class="source-box">
         <p>조선어연구회의 후신으로 1931년 설립된 조선어학회는 1933년 <strong>( ㉠ )</strong>을/를 발표하여 우리말 표기의 원칙을 체계적으로 확립하였다. 나아가 언론사와 협조해 농민을 대상으로 한 <strong>㉡ 문자보급운동</strong>을 활발히 벌여나갔다. 이 운동은 1935년 조선총독부에 의해 강제로 중단되었으나, 조선어학회는 이에 굴하지 않고 국어 연구를 이어 가며 현대 한글 체계의 형성에 튼튼한 토대를 쌓았다.</p>
@@ -556,6 +610,11 @@
             <li><strong>출발과 전개:</strong> 1908년 신채호의 「독사신론」을 기점으로, 역사를 민족의 소장성쇠 과정으로 파악하고 민족의 발전을 주축으로 삼는 근대 역사학이 정립되기 시작했다. 1930년대에는 정인보, 문일평 등이 <strong>조선학운동</strong>을 통해 '조선의 얼'과 민족정신을 강조하며 식민사학에 대항했다.</li>
         </ul>
     </div>
+    <div class="keyword-box">
+        <h4>🎯 [출제 유력 핵심 키워드]</h4>
+        <span class="keyword-tag">타율성론</span> <span class="keyword-tag">정체성론</span> <span class="keyword-tag">독사신론(신채호)</span> <span class="keyword-tag">부여족</span> <span class="keyword-tag">민족의 소장성쇠</span> <span class="keyword-tag">조선사회경제사(백남운)</span> <span class="keyword-tag">일원론적 변증법적 발전(보편성)</span>
+    </div>
+
     <div class="question-header">[문항 12] 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. (자작 문항) [4점]</div>
     <div class="source-box">
         <p><strong>(가)</strong> "국가의 역사는 민족의 소장성쇠를 서술하는 것이고, 민족을 버리면 역사가 없다." … (중략) … 우리 역사는 만주를 무대로 하는 주족(主族)인 <strong>( ㉠ )</strong>(이)가 객족(客族)으로서 외래족인 중국족과 토착족인 한족(韓族)을 제압해 간 역사이다. <span class="source-ref">- 신채호, 『독사신론』 -</span></p>
@@ -590,6 +649,11 @@
             <li><strong>선출 방식의 공통점:</strong> 1970년대 유신 헌법하의 '통일주체국민회의'와 1980년대 제5공화국 헌법하의 '대통령선거인단'은 모두 국민의 직접 투표가 아닌 <strong>대통령 <span class="exam-term-green">간접 선거 (또는 간선제)</span></strong> 방식이라는 공통점이 있었습니다.</li>
         </ul>
     </div>
+    <div class="keyword-box">
+        <h4>🎯 [출제 유력 핵심 키워드]</h4>
+        <span class="keyword-tag">긴급조치</span> <span class="keyword-tag">YH 사건</span> <span class="keyword-tag">부마 민주 항쟁</span> <span class="keyword-tag">통일주체국민회의(유신)</span> <span class="keyword-tag">대통령선거인단(5공)</span> <span class="keyword-tag">간접 선거(간선제)</span> <span class="keyword-tag">4·13 호헌 조치</span> <span class="keyword-tag">6월 민주 항쟁</span>
+    </div>
+
     <div class="question-header">[문항 13] (2025학년도 B형 2번 기출) 다음 자료를 읽고 &lt;작성 방법&gt;에 따라 서술하시오. [4점]</div>
     <div class="source-box">
         <p><strong>(가)</strong> 1. 다음 각 호의 행위를 금한다. ... ㉯ 집회, 시위 또는 신문, 방송 등 공중 전파 수단이나 문서 등 표현물에 의하여 대한민국 <strong>㉠ 헌법</strong>을 부정, 반대, 왜곡 또는 비방하거나 그 개정 또는 폐지를 주장, 청원, 선동하는 행위.</p>
@@ -623,6 +687,31 @@
             <li><strong>연구 지평의 다변화:</strong> 연구회가 창립된 지 한 세대가 지나면서 기존의 운동사나 거시적인 사회경제사 중심에서 벗어나 <strong>문화사, 생활사, 미시사</strong>, 생태환경사, 개념사 등으로 사고와 연구의 폭이 크게 확장되었습니다.</li>
             <li><strong>분단사관의 극복 노력:</strong> 광복(8·15) 이후의 현대사를 서술할 때, 남한사 중심으로 북한사를 덧붙이는 방식이나 남북의 역사를 분리하여 기술하는 방식에서 벗어나, 남북의 8·15 이후사를 <strong>대등한 위치에서 하나의 역사로 용해</strong>시켜 다루어야 한다는 역사인식이 자리 잡아가고 있습니다.</li>
         </ul>
+    </div>
+    <div class="keyword-box">
+        <h4>🎯 [출제 유력 핵심 키워드]</h4>
+        <span class="keyword-tag">내재적 발전론</span> <span class="keyword-tag">식민사관 극복</span> <span class="keyword-tag">문화사·미시사적 접근</span> <span class="keyword-tag">분단사관 극복</span> <span class="keyword-tag">남북 대등 서술(용해)</span>
+    </div>
+
+    <!-- 미주(Endnotes) 영역 추가 -->
+    <div class="endnotes-box" id="endnotes">
+        <h3>[미주] 주제별 참고 문헌 및 기출문제 출처 목록</h3>
+        <ol>
+            <li><span class="note-title">주제 1:</span> 전공역사 임용고시 기출문제(한국사 2014-2026학년도), (한국사시대사총서01)한국고대사1, (한국사시대사총서03)고려시대사1, (한국사시대사총서05)조선시대사1</li>
+            <li><span class="note-title">주제 2:</span> 전공역사 임용고시 기출문제(한국사 2014-2026학년도), (한국사시대사총서05)조선시대사1</li>
+            <li><span class="note-title">주제 3:</span> 전공역사 임용고시 기출문제(한국사 2014-2026학년도), 고쳐 쓴 한국근대사, (한국사시대사총서07)한국근대사1</li>
+            <li><span class="note-title">주제 4:</span> 전공역사 임용고시 기출문제(한국사 2014-2026학년도), 고쳐 쓴 한국근대사, (한국사시대사총서08)한국근대사2</li>
+            <li><span class="note-title">주제 5:</span> 고쳐 쓴 한국근대사, (한국사시대사총서08)한국근대사2</li>
+            <li><span class="note-title">주제 6:</span> 고쳐 쓴 한국근대사, (한국사시대사총서08)한국근대사2</li>
+            <li><span class="note-title">주제 7:</span> 7권 뿌리깊은 한국사 샘이깊은 이야기(현대), 고쳐 쓴 한국근대사, (한국사시대사총서08)한국근대사2</li>
+            <li><span class="note-title">주제 8:</span> 전공역사 임용고시 기출문제(한국사 2014-2026학년도), 고쳐 쓴 한국근대사, (한국사시대사총서08)한국근대사2</li>
+            <li><span class="note-title">주제 9:</span> 고쳐 쓴 한국근대사, (한국사시대사총서08)한국근대사2</li>
+            <li><span class="note-title">주제 10:</span> 전공역사 임용고시 기출문제(한국사 2014-2026학년도), 고쳐 쓴 한국근대사, (한국사시대사총서08)한국근대사2</li>
+            <li><span class="note-title">주제 11:</span> 고쳐 쓴 한국근대사, (한국사시대사총서08)한국근대사2</li>
+            <li><span class="note-title">주제 12:</span> 새로 쓴 한국사특강, 고쳐 쓴 한국근대사, (한국사시대사총서08)한국근대사2</li>
+            <li><span class="note-title">주제 13:</span> 전공역사 임용고시 기출문제(한국사 2014-2026학년도), 고쳐 쓴 한국현대사, (한국사시대사총서10)한국현대사2</li>
+            <li><span class="note-title">주제 14:</span> 새로 쓴 한국사특강, 고쳐 쓴 한국현대사, (한국사시대사총서10)한국현대사2</li>
+        </ol>
     </div>
 
 </div>
@@ -662,7 +751,7 @@
         
         try {
             document.execCommand('copy');
-            alert("1910년대 국내외 독립운동 주제가 신설되고, 14개 대주제가 '시대순'으로 완벽 재배열된 전체 문서가 클립보드에 복사되었습니다!\n\n한글(HWP)이나 워드 프로그램에 [붙여넣기(Ctrl+V)] 해주세요.");
+            alert("전체 14개 주제와 🎯[출제 유력 핵심 키워드], 그리고 맨 하단의 [미주: 주제별 출처 목록]이 클립보드에 복사되었습니다!\n\n한글(HWP)이나 워드 프로그램에 [붙여넣기(Ctrl+V)] 해주세요.");
         } catch (err) {
             alert("복사에 실패했습니다. 텍스트를 직접 드래그해서 복사해 주세요.");
         }
@@ -680,7 +769,3 @@
 </body>
 </html>
 ```
-
-정밀하게 구성된 1910년대 정리본과 문항들을 통하여 독립 운동의 전체적인 시대적 맥락과 핵심 사료적 쟁점을 한층 더 입체적으로 마스터하실 수 있기를 응원합니다! 
-
-혹시 공부하시다가 풀이에 의문이 생기시거나, 보완하고 싶은 내용 혹은 다른 주제의 출제를 원하시면 언제든지 말씀해 주세요! 📚
