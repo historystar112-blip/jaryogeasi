@@ -1,0 +1,308 @@
+
+```html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[역사 수업지] 평화적 정권 교체와 민주주의의 발전</title>
+    <style>
+        :root {
+            --primary-color: #2E86C1; /* 민주주의와 평화를 상징하는 푸른색 */
+            --text-color: #2C3E50;
+            --bg-color: #F8F9F9;
+            --card-bg: #EBF5FB;
+            --accent-color: #E67E22;
+            --muted-color: #7F8C8D;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 25px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-weight: 800;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--muted-color);
+            margin: 0;
+            font-style: italic;
+        }
+
+        section {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 35px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #EAEAEA;
+            padding-bottom: 10px;
+        }
+
+        .intro-box {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-top: 15px;
+            border: 1px solid #D6EAF8;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 20px 0;
+            padding-left: 30px;
+            border-left: 2px solid #D5D8DC;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -37px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .event-card {
+            background-color: #FDFEFE;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .event-card h3 {
+            margin-top: 0;
+            color: var(--text-color);
+            font-size: 1.15rem;
+            border-bottom: 1px solid #E0DDD5;
+            padding-bottom: 5px;
+        }
+
+        .quiz-item {
+            background-color: #FAFAFA;
+            border: 1px solid #EAEAEA;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .quiz-question {
+            font-weight: bold;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            color: var(--text-color);
+        }
+
+        .ans-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .ans-btn:hover {
+            background-color: #21618C;
+        }
+
+        .ans-content {
+            display: none;
+            margin-top: 15px;
+            background-color: #E8F8F5;
+            border-left: 4px solid #1ABC9C;
+            padding: 12px 18px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #2D3748;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>평화적 정권 교체와 민주주의의 발전</h1>
+        <p>노태우 정부부터 김대중 정부까지 (1987~2000년대 초)</p>
+    </header>
+
+    <section>
+        <h2>0. 도입: 내 손으로 뽑는 한 표의 감동</h2>
+        <div class="intro-box">
+            <p><strong>"과거 선거인단에 의한 ‘체육관 선거’ 때의 무력감에서 벗어나 스스로 한 표를 행사하는 것 자체에 감동까지 느껴진다."</strong><br>
+            - 『동아일보』 (1987.12.16.)</p>
+            <p>위의 기사는 6월 민주 항쟁 이후 처음으로 열린 직접 선거일에 투표를 마친 한 유권자의 소감입니다. 소수의 사람들이 체육관에 모여 거수기로 대통령을 뽑던 시대를 지나, 국민 모두가 스스로 대표를 뽑게 된 이 감동적인 순간은 우리 역사의 큰 전환점이 되었습니다.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>1. 시대 개관</h2>
+        <p>1987년 6월 민주 항쟁을 기점으로 대한민국은 기나긴 군사 독재를 마감하고 평화적인 정권 교체의 길로 들어섭니다. 노태우 정부를 거쳐, 민간인 출신의 김영삼 정부(문민정부)가 출범하며 과거사 청산이 이루어졌습니다. 이후 1997년 선거를 통해 헌정 사상 최초로 여야 간 평화적 정권 교체로 김대중 정부가 출범하였고, IMF 위기 극복과 남북 화해 협력이라는 거대한 발전을 이룩하였습니다.</p>
+    </section>
+
+    <section>
+        <h2>2. 연대기 마인드맵</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1987년</div>
+                <div><strong>6월 민주 항쟁과 노태우 정부 출범:</strong> 대통령 직선제 개헌 쟁취 및 국민 투표로 제13대 대통령 선출</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1988 ~ 1991년</div>
+                <div><strong>서울 올림픽 및 북방 외교:</strong> 올림픽 성공 개최 및 공산권 국가와의 수교. 1991년 남북 기본 합의서 채택</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1993년</div>
+                <div><strong>김영삼 정부 출범:</strong> 오랜 군사 정권의 끝, 민간인 출신 대통령의 등장</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1990년대 중반</div>
+                <div><strong>과거사 청산 및 개혁:</strong> 역사 바로 세우기(총독부 건물 철거 등), 금융 실명제, 지방 자치제 전면 실시</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1997 ~ 1998년</div>
+                <div><strong>IMF 위기 발생 및 김대중 정부 출범:</strong> 사상 최초 선거를 통한 여야 정권 교체 성공, 강도 높은 구조조정으로 위기 극복 시도</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">2000년</div>
+                <div><strong>제1차 남북 정상 회담:</strong> 평양에서 정상회담 개최 및 6·15 남북 공동 선언 발표</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. 각 정부의 주요 정책과 성과</h2>
+        
+        <div class="event-card">
+            <h3>🔹 노태우 정부 (1988~1993)</h3>
+            <ul>
+                <li>대통령 5년 단임제 및 직접 선거를 통해 출범</li>
+                <li><strong>북방 외교:</strong> 냉전 체제 붕괴를 배경으로 소련, 중국 등 공산권 국가와 국교 수립</li>
+                <li>1988년 서울 올림픽 개최</li>
+            </ul>
+        </div>
+
+        <div class="event-card">
+            <h3>🔹 김영삼 정부 (1993~1998)</h3>
+            <ul>
+                <li><strong>역사 바로 세우기:</strong> 전두환, 노태우 전 대통령 구속(12·12 사태 및 5·18 진압 책임), 조선 총독부 건물 철거, '초등학교'로 명칭 변경</li>
+                <li><strong>제도 개혁:</strong> 부정한 자금 거래 차단을 위한 <strong>금융 실명제</strong> 전격 실시</li>
+                <li>독재 정권 때 폐지되었던 <strong>지방 자치제</strong> 전면 실시로 지방 분권 실현</li>
+            </ul>
+        </div>
+
+        <div class="event-card">
+            <h3>🔹 김대중 정부 (1998~2003)</h3>
+            <ul>
+                <li>대한민국 정부 수립 이후 최초로 <strong>선거를 통한 평화적 여야 정권 교체</strong> 달성</li>
+                <li>국가 인권 위원회 설치 등 인권과 소수자 권익 보호 강화</li>
+                <li><strong>제1차 남북 정상 회담(2000):</strong> 분단 이후 최초로 남북 정상이 만나 <strong>6·15 남북 공동 선언</strong>을 발표하여 화해와 협력의 계기 마련</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. 형성평가 (배운 내용 확인 퀴즈)</h2>
+        
+        <div class="quiz-item">
+            <div class="quiz-question">Q1. 1987년, 체육관 선거를 폐지하고 국민이 직접 대통령을 뽑는 '대통령 직선제 개헌'을 이끌어낸 결정적 사건은 무엇입니까?</div>
+            <button class="ans-btn" onclick="toggleAnswer('ans1')">정답 확인</button>
+            <div id="ans1" class="ans-content"><strong>정답: 6월 민주 항쟁</strong></div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="quiz-question">Q2. 노태우 정부 시기, 냉전 체제의 붕괴라는 시대적 배경을 바탕으로 소련, 중국 등 공산권 국가들과 외교 관계를 맺은 정책을 무엇이라고 하나요?</div>
+            <button class="ans-btn" onclick="toggleAnswer('ans2')">정답 확인</button>
+            <div id="ans2" class="ans-content"><strong>정답: 북방 외교</strong></div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="quiz-question">Q3. 김영삼 정부가 부정한 정치·경제 자금 거래를 막기 위해 모든 금융 거래를 실제 본인의 이름으로만 하도록 전격 실시한 제도의 이름은 무엇인가요?</div>
+            <button class="ans-btn" onclick="toggleAnswer('ans3')">정답 확인</button>
+            <div id="ans3" class="ans-content"><strong>정답: 금융 실명제</strong></div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="quiz-question">Q4. [O/X] 김영삼 정부는 '역사 바로 세우기'의 일환으로 일재 잔재인 조선 총독부 건물을 철거하고, 국민학교의 명칭을 초등학교로 변경하였다.</div>
+            <button class="ans-btn" onclick="toggleAnswer('ans4')">정답 확인</button>
+            <div id="ans4" class="ans-content"><strong>정답: O</strong><br><em>해설: 잘못된 과거사 청산과 일제 잔재 청산을 위해 실시된 대표적인 조치입니다.</em></div>
+        </div>
+
+        <div class="quiz-item">
+            <div class="quiz-question">Q5. 김대중 정부 시기인 2000년, 제1차 남북 정상 회담의 결과로 남과 북이 자주적으로 통일 문제를 해결하자는 내용을 담아 발표한 선언의 이름은 무엇입니까?</div>
+            <button class="ans-btn" onclick="toggleAnswer('ans5')">정답 확인</button>
+            <div id="ans5" class="ans-content"><strong>정답: 6·15 남북 공동 선언</strong></div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>© 역사 수업 보조 교재 - 본 페이지는 비영리 교육용 목적을 위해 제작되었습니다.</p>
+</footer>
+
+<script>
+    function toggleAnswer(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "block") {
+            element.style.display = "none";
+        } else {
+            element.style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>
+```
